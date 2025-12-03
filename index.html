@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dean Martin Ring | A Love Story in Diamonds</title>
+  <meta name="description" content="The story of Dean Martin's engagement ring to Jeanne Biegger. Verified provenance. Coming March 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #B8860B;
+      --gold-light: #D4AF37;
+      --gold-dark: #8B6914;
+      --champagne: #F7E7CE;
+      --cream: #FDF5E6;
+      --burgundy: #722F37;
+      --burgundy-dark: #4A1C23;
+      --noir: #0A0A0A;
+      --velvet: #121212;
+      --smoke: #1E1E1E;
+      --text-muted: #9A8F80;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--noir);
+      color: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Film grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Vignette effect */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0,0,0,0.4) 100%);
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+
+    .nav-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+      background: linear-gradient(135deg, var(--noir) 0%, var(--velvet) 50%, var(--burgundy-dark) 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center top, rgba(212,175,55,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to top, var(--noir) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-pretitle {
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.3s forwards;
+      text-shadow: 0 0 30px rgba(212,175,55,0.5);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+
+    .hero-title span {
+      display: block;
+      font-style: italic;
+      font-size: 0.5em;
+      color: var(--champagne);
+      margin-top: 0.5rem;
+      text-shadow: 0 0 40px rgba(247,231,206,0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      margin-top: 2rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.7s forwards;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 1s forwards;
+      z-index: 10;
+    }
+
+    .scroll-indicator span {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--gold-light), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+
+    /* Wedding Section */
+    .wedding {
+      padding: 8rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .wedding-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .wedding-image {
+      position: relative;
+    }
+
+    .wedding-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: sepia(20%) contrast(1.1) brightness(0.95);
+      opacity: 0;
+      animation: fadeIn 1.2s ease 0.3s forwards;
+      border: 1px solid var(--gold-dark);
+    }
+
+    .wedding-image::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: 15px;
+      bottom: 15px;
+      border: 1px solid var(--gold);
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    .wedding-image::after {
+      content: '1965';
+      position: absolute;
+      bottom: -50px;
+      right: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 7rem;
+      font-weight: 300;
+      color: var(--gold);
+      opacity: 0.1;
+      line-height: 1;
+      text-shadow: 0 0 60px rgba(212,175,55,0.3);
+    }
+
+    .wedding-content {
+      padding: 2rem 0;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: var(--gold-dark);
+    }
+
+    .section-label::before {
+      display: none;
+    }
+
+    .wedding-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      color: var(--champagne);
+    }
+
+    .wedding-text {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--cream);
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .wedding-text em {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15em;
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    /* Ring Section */
+    .ring-section {
+      padding: 8rem 2rem;
+      background: linear-gradient(to bottom, var(--noir), var(--velvet), var(--noir));
+      position: relative;
+    }
+
+    .ring-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(212,175,55,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .ring-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .ring-content {
+      order: 2;
+    }
+
+    .ring-image-wrap {
+      order: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ring-image-wrap img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 100px rgba(212,175,55,0.15));
+    }
+
+    .ring-image-wrap::before {
+      content: '';
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid var(--gold-dark);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: rotate 40s linear infinite;
+    }
+
+    .ring-image-wrap::after {
+      content: '';
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border: 1px solid var(--burgundy);
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: rotate 30s linear infinite reverse;
+    }
+
+    .ring-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: var(--champagne);
+    }
+
+    .ring-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--gold-dark);
+    }
+
+    .spec {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .spec-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .spec-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--champagne);
+    }
+
+    /* Timeline */
+    .timeline {
+      padding: 8rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .timeline-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 300;
+      color: var(--champagne);
+    }
+
+    .timeline-list {
+      position: relative;
+    }
+
+    .timeline-list::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold), var(--burgundy), var(--gold), transparent);
+    }
+
+    .timeline-item {
+      padding-left: 3rem;
+      padding-bottom: 4rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 0.5rem;
+      width: 11px;
+      height: 11px;
+      border: 1px solid var(--gold-light);
+      background: var(--noir);
+      transform: rotate(45deg);
+      box-shadow: 0 0 20px rgba(212,175,55,0.3);
+    }
+
+    .timeline-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 30px rgba(212,175,55,0.3);
+    }
+
+    .timeline-event {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: var(--champagne);
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* Coming Soon */
+    .coming-soon {
+      padding: 10rem 2rem;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(to bottom, var(--noir), var(--burgundy-dark), var(--noir));
+    }
+
+    .coming-soon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(212,175,55,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .coming-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-weight: 300;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--champagne) 0%, var(--gold-light) 30%, var(--gold) 50%, var(--gold-light) 70%, var(--champagne) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 2rem;
+      text-shadow: none;
+      filter: drop-shadow(0 0 60px rgba(212,175,55,0.4));
+    }
+
+    .coming-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+    }
+
+    .coming-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--champagne);
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+      padding: 4rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--gold-dark);
+      background: var(--noir);
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .footer-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-link {
+      color: var(--gold);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-link:hover {
+      opacity: 0.7;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      nav {
+        padding: 1.5rem 2rem;
+      }
+
+      .wedding-grid,
+      .ring-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .ring-content {
+        order: 1;
+      }
+
+      .ring-image-wrap {
+        order: 2;
+      }
+
+      .wedding-image::after {
+        font-size: 4rem;
+        bottom: -30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .ring-specs {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">NextHeir</div>
+    <div class="nav-tag">Verified Provenance</div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-pretitle">A Hollywood Love Story</p>
+    <h1 class="hero-title">
+      The Dean Martin Ring
+      <span>& Jeanne Biegger</span>
+    </h1>
+    <p class="hero-subtitle">Verified Provenance · Coming March 2026</p>
+    <div class="scroll-indicator">
+      <span>Discover</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Wedding Section -->
+  <section class="wedding">
+    <div class="wedding-grid">
+      <div class="wedding-image">
+        <img src="dean_jeanne_wedding.png" alt="Dean Martin and Jeanne Biegger at their wedding, 1965">
+      </div>
+      <div class="wedding-content">
+        <p class="section-label">The Wedding</p>
+        <h2 class="wedding-title">April 25, 1965<br>A Ring for Jeanne</h2>
+        <p class="wedding-text">
+          When Dean Martin married Jeanne Biegger in 1965, he gave her more than a promise. He gave her a ring that would witness <em>nearly three decades of marriage</em>, a Hollywood partnership, and a love story that outlasted the spotlight.
+        </p>
+        <p class="wedding-text">
+          This ring was there — at the wedding, through the years, until Jeanne's passing in 2016. Now, its story continues.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ring Section -->
+  <section class="ring-section">
+    <div class="ring-container">
+      <div class="ring-content">
+        <p class="section-label">The Ring</p>
+        <h2 class="ring-title">A Symbol of an Era</h2>
+        <p class="wedding-text">
+          Dean Martin's engagement ring to Jeanne represents more than Hollywood glamour. It carries the weight of real love, real marriage, real legacy.
+        </p>
+        <p class="wedding-text">
+          With NextHeir, we're documenting its complete provenance — from Dean to Jeanne to its current custodian — creating an immutable record that will preserve this story for generations.
+        </p>
+        <div class="ring-specs">
+          <div class="spec">
+            <span class="spec-label">Provenance</span>
+            <span class="spec-value">Dean Martin → Jeanne Biegger</span>
+          </div>
+          <div class="spec">
+            <span class="spec-label">Era</span>
+            <span class="spec-value">1965</span>
+          </div>
+          <div class="spec">
+            <span class="spec-label">Marriage</span>
+            <span class="spec-value">24 Years</span>
+          </div>
+          <div class="spec">
+            <span class="spec-label">Verification</span>
+            <span class="spec-value">Blockchain Certified</span>
+          </div>
+        </div>
+      </div>
+      <div class="ring-image-wrap">
+        <img src="dean_martin_ring.png" alt="The Dean Martin Ring">
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline">
+    <div class="timeline-header">
+      <p class="section-label">The Journey</p>
+      <h2 class="timeline-title">A Ring's Provenance</h2>
+    </div>
+    <div class="timeline-list">
+      <div class="timeline-item">
+        <div class="timeline-year">1965</div>
+        <div class="timeline-event">Dean Martin Proposes to Jeanne Biegger</div>
+        <div class="timeline-desc">The ring begins its journey at one of Hollywood's most celebrated weddings.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1965–1989</div>
+        <div class="timeline-event">The Martin Marriage</div>
+        <div class="timeline-desc">24 years of partnership. The ring witnesses Hollywood history.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2016</div>
+        <div class="timeline-event">Jeanne Martin Passes</div>
+        <div class="timeline-desc">The ring's first chapter closes. Its story awaits preservation.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-event">NextHeir Verification</div>
+        <div class="timeline-desc">Complete provenance documentation. Blockchain certification. Story captured forever.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon -->
+  <section class="coming-soon">
+    <div class="coming-date">March 2026</div>
+    <p class="coming-label">Public Debut</p>
+    <p class="coming-text">
+      The complete story of Dean Martin's ring — documented, verified, and preserved for generations — launches on NextHeir.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-logo">NextHeir</p>
+    <p class="footer-text">
+      Verified Provenance · Digital Legacy · <a href="https://nextheir.io" class="footer-link">nextheir.io</a>
+    </p>
+  </footer>
+
+</body>
+</html>
